@@ -7,61 +7,57 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Título y resumen en una columna -->
-        <header class="fila-superior">
-            <!-- Título de la aplicación con el mes y el año -->
-            <h1 id="titulo-mes">Presupuesto de [Mes] [Año]</h1>
+    <!-- Sección superior: Título y resumen -->
+    <header id="encabezado">
+        <h1 id="titulo-mes">Presupuesto de [Mes] [Año]</h1>
 
-            <!-- Sección del saldo actual disponible -->
-            <div id="saldo-disponible">
-                <h2>Saldo actual disponible:</h2>
-                <!-- El saldo se actualiza dinámicamente en este elemento -->
-                <p id="saldo-total">0.00</p>
-            </div>
+        <div id="saldo-disponible">
+            <p id="saldo-total">0.00</p>
+        </div>
 
-            <!-- Resumen de ingresos, egresos y porcentaje de gastos -->
-            <div class="resumen">
-                <div class="ingresos">
-                    <h2>Ingresos</h2>
-                    <p id="total-ingresos">0.00</p>
-                </div>
-                <div class="egresos">
-                    <h2>Egresos</h2>
-                    <p id="total-egresos">0.00</p>
-                </div>
-                <div class="porcentaje">
-                    <h2>Porcentaje de gastos</h2>
-                    <p id="porcentaje-egresos">(0%)</p>
-                </div>
+        <div class="resumen">
+            <div class="ingresos">
+                <h2 class="ing">INGRESOS:</h2>
+                <p id="total-ingresos">0.00</p>
             </div>
-        </header>
+            <div class="egresos">
+                <h2>EGRESOS:</h2>
+                <p id="total-egresos">0.00</p>
+            </div>
+            <div class="porcentaje">
+                <h2>PORCENTAJE DE GASTOS:</h2>
+                <p id="porcentaje-egresos">0%</p>
+            </div>
+        </div>        
+    </header>
 
-        <!-- Sección dividida en dos columnas: transacciones y detalles -->
-        <section class="transacciones-detalles">
-            <!-- Columna 1: Formulario de transacciones -->
-            <div class="columna-transacciones">
-                <h3>Añadir Transacción</h3>
-                <select id="tipo-transaccion">
-                    <option value="ingreso">Ingreso</option>
-                    <option value="egreso">Egreso</option>
-                </select>
-                <input type="text" id="descripcion" placeholder="Descripción">
-                <input type="number" id="monto" placeholder="Monto">
-                <button id="agregar-btn">Agregar</button>
+    <!-- Sección de transacciones y detalles -->
+    <section class="transacciones-detalles">
+        <div class="columna-transacciones">
+            <div class="transaccion-header">
+                <div class="circulo-mas" id="circulo-agregar"></div> <!-- Círculo con símbolo de más -->
+                <h3>Transacción</h3>
             </div>
+            <select id="tipo-transaccion">
+                <option value="ingreso">Ingreso</option>
+                <option value="egreso">Egreso</option>
+            </select>
+            <input type="text" id="descripcion" placeholder="Descripción">
+            <input type="number" id="monto" placeholder="Monto">
+            <button id="agregar-btn">Agregar</button>
+        </div>
+        
+        
 
-            <!-- Columna 2: Detalles de ingresos y egresos -->
-            <div class="columna-detalles">
-                <h3>Detalles</h3>
-                <div class="tabs">
-                    <button id="tab-ingresos">Ingresos</button>
-                    <button id="tab-egresos">Egresos</button>
-                </div>
-                <ul id="lista-transacciones"></ul>
+        <div class="columna-detalles">
+            <h3>Detalles</h3>
+            <div class="tabs">
+                <button id="tab-ingresos">Ingresos</button>
+                <button id="tab-egresos">Egresos</button>
             </div>
-        </section>
-    </div>
+            <ul id="lista-transacciones"></ul>
+        </div>
+    </section>
 
     <script src="js/Script.js"></script>
 </body>

@@ -7,34 +7,38 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #1d1d1d;
+    background-color: #ffffff; /* Fondo blanco */
+    color: #1d1d1d; /* Texto negro */
+    height: 100vh; /* Altura completa de la ventana */
+    display: flex;
+    flex-direction: column; /* Coloca las secciones en columna */
 }
 
-.container {
-    width: 80%;
-    margin: 20px auto;
-    background-color: #fff;
+/* Encabezado */
+#encabezado {
+    background-color: #edf0f5; /* Fondo gris oscuro para el encabezado */
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0; /* Sin bordes redondeados */
+    width: 100%; /* Ancho completo */
 }
 
+/* Títulos y subtítulos */
 h1, h2, h3 {
     margin-bottom: 10px;
-}
-
-/* Fila superior: título y resumen ahora en una columna */
-.fila-superior {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-header {
-    width: 100%;
+    color: #2b313d; /* Texto gris oscuro */
     text-align: center;
+}
+
+.ing{
+    margin-bottom: 10px;
+    color: #ffffff; /* Texto gris oscuro */
+    text-align: center;
+}
+
+.transaccion-header h3 {
+    margin: 0; /* Eliminar márgenes */
+    line-height: 20px; /* Alinea la altura de línea con la altura del círculo */
+    font-size: 20px; /* Ajusta el tamaño de la fuente según sea necesario */
 }
 
 /* Estilos para el saldo disponible */
@@ -46,62 +50,97 @@ header {
 #saldo-total {
     font-size: 24px;
     font-weight: bold;
-    color: #47af5e; /* Verde para saldo positivo */
+    color: #2b313d; /* Gris oscuro para el saldo */
 }
 
+/* Resumen de ingresos, egresos y porcentaje */
 .resumen {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    margin-top: 20px;
+    width: 30%;
+    margin: 20px auto; /* Centrado con margen automático */
 }
 
-.ingresos, .egresos, .porcentaje {
+.resumen > div {
+    display: flex; /* Usar flexbox en cada contenedor */
+    justify-content: space-between; /* Espacio entre el título y el dato */
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espacio interno */
+}
+
+
+.ingresos{
     padding: 10px;
     border-radius: 8px;
-    background-color: #fbbf54;
-    width: 30%; /* Ajustar el ancho según sea necesario */
-    
-    margin-right: 150px;
+    background-color: #2b313d; /* Gris claro */
+    width: 100%; /* Ancho completo */
+    text-align: center; /* Alinear texto al centro */
+    margin-bottom: 10px;
 }
 
 .egresos {
-    background-color: #dd4658;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #ffffff; /* Fondo gris claro */
+    width: 100%; /* Ancho completo */
+    text-align: center; /* Alinear texto a la izquierda */
+    border: 2px solid #2b313d; /* Cambia #dd4658 al color que desees para la línea */
 }
 
-.porcentaje {
-    background-color: #57b2d6;
+
+.porcentaje{
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #edf0f5; /* Gris claro */
+    width: 100%; /* Ancho completo */
+    text-align: center; /* Alinear texto al centro */
+    margin-bottom: 10px;
 }
 
-#total-ingresos, #total-egresos, #porcentaje-egresos {
-    font-size: 24px; /* Tamaño de fuente */
-    font-weight: bold; /* Negrita para destacar */
-    margin-left: 150px;
+
+#total-egresos, #porcentaje-egresos {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000; /* Negro para los totales */
+    
 }
+
+#total-ingresos{
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff; /* Negro para los totales */
+}
+
 
 /* Sección de transacciones y detalles en dos columnas */
 .transacciones-detalles {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap; /* Permite que las columnas se envuelvan en pantallas pequeñas */
+    width: 100%; /* Ancho completo */
+    padding: 20px; /* Espacio dentro de la sección */
 }
 
-.columna-transacciones {
-    width: 45%;
-    background-color: #f7f7f7;
+.columna-transacciones, .columna-detalles {
+    width: 45%; /* Ancho de cada columna */
+    background-color: #f7f7f7; /* Fondo gris muy claro */
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 0; /* Sin bordes redondeados */
+    box-shadow: none; /* Sin sombra */
 }
 
+/* Campos de entrada */
 #tipo-transaccion, #descripcion, #monto {
     margin-bottom: 10px;
     padding: 10px;
     width: 100%;
+    border: 1px solid #cccccc; /* Borde gris claro */
 }
 
+/* Botones */
 button {
-    background-color: #57b2d6;
+    background-color: #2b313d; /* Gris oscuro */
     color: white;
     border: none;
     padding: 10px;
@@ -111,17 +150,10 @@ button {
 }
 
 button:hover {
-    background-color: #47af5e;
+    background-color: #474747; /* Gris más oscuro al pasar el mouse */
 }
 
-.columna-detalles {
-    width: 45%;
-    background-color: #f7f7f7;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-}
-
+/* Estilos de las pestañas */
 .tabs {
     margin-bottom: 10px;
 }
@@ -130,17 +162,96 @@ button:hover {
     margin-right: 10px;
     padding: 10px;
     width: 45%;
+    background-color: #d9d9d9; /* Gris claro para botones de tab */
 }
 
+/* Listas */
 ul {
     list-style-type: none;
     padding: 0;
 }
 
 li {
-    background-color: #be7429;
+    background-color: #7d7d7d; /* Gris medio para las transacciones */
     padding: 10px;
     margin: 5px 0;
     border-radius: 5px;
-    color: white;
+    color: white; /* Texto blanco en las transacciones */
+}
+
+.transaccion-header {
+    display: flex; /* Usar flexbox para alinear los elementos en una fila */
+    align-items: center; /* Alinear verticalmente al centro */
+    margin-bottom: 20px; /* Espacio debajo del header */
+    justify-content: flex-start; /* Alinea a la izquierda */
+}
+
+/* Círculo */
+.circulo-mas {
+    width: 30px; /* Ancho del círculo */
+    height: 30px; /* Alto del círculo */
+    background-color: #2b313d; /* Color de fondo verde */
+    border-radius: 50%; /* Hacerlo circular */
+    display: flex; /* Usar flexbox para centrar el contenido */
+    align-items: center; /* Alinear verticalmente al centro */
+    justify-content: center; /* Alinear horizontalmente al centro */
+    margin-right: 10px; /* Espacio entre el círculo y el título */
+    font-size: 20px; /* Tamaño del símbolo */
+    color: white; /* Color del símbolo */
+}
+
+.circulo-mas::before {
+    content: '+'; /* Contenido del círculo */
+    color: white; /* Color del símbolo */
+}
+
+
+/* Consultas de medios para hacer la página responsiva */
+@media (max-width: 1200px) {
+    .resumen {
+        width: 50%; /* Ajustar el ancho del resumen */
+    }
+
+    .columna-transacciones, .columna-detalles {
+        width: 48%; /* Ancho de columnas más ajustado */
+    }
+}
+
+@media (max-width: 768px) {
+    .transacciones-detalles {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    }
+
+    .columna-transacciones, .columna-detalles {
+        width: 100%; /* Ocupa el ancho completo */
+        margin-bottom: 20px; /* Espacio entre las columnas */
+    }
+
+    #encabezado {
+        padding: 15px; /* Espaciado reducido en pantallas pequeñas */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Ajusta el tamaño del título en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    #saldo-total {
+        font-size: 20px; /* Tamaño de fuente más pequeño para saldo total */
+    }
+
+    h2, h3 {
+        font-size: 1.2em; /* Ajusta tamaño de fuente para subtítulos */
+    }
+
+    button {
+        padding: 8px; /* Espaciado reducido en botones */
+    }
+
+    .circulo-mas {
+        width: 25px; /* Ajusta el tamaño del círculo */
+        height: 25px; /* Ajusta el tamaño del círculo */
+        font-size: 18px; /* Tamaño de fuente más pequeño para el símbolo */
+    }
 }
