@@ -101,16 +101,36 @@ document.addEventListener("DOMContentLoaded", () => {
             listaTransacciones.appendChild(li);
         });
     }
+    // Función para cambiar el color de los tabs
+    function cambiarColorTab(tabActivo) {
+        const tabs = ['tab-ingresos', 'tab-egresos'];
+        tabs.forEach(tab => {
+            const elemento = document.getElementById(tab);
+            if (tab === tabActivo) {
+                elemento.style.backgroundColor = '#2b313d'; // Color de fondo para el tab activo
+                elemento.style.color = 'white'; // Color de texto para el tab activo
+            } else {
+                elemento.style.backgroundColor = '#d9d9d9'; // Color de fondo original para tabs inactivos
+                elemento.style.color = 'black'; // Color de texto original para tabs inactivos
+            }
+        });
+    }
 
     document.getElementById('agregar-btn').addEventListener('click', agregarTransaccion);
+
     document.getElementById('tab-ingresos').addEventListener('click', () => {
         tipoTransaccion.value = "ingreso";
         mostrarTransacciones();
+        cambiarColorTab('tab-ingresos');
     });
+
     document.getElementById('tab-egresos').addEventListener('click', () => {
         tipoTransaccion.value = "egreso";
         mostrarTransacciones();
+        cambiarColorTab('tab-egresos');
     });
 
+    // Inicializar el tab de ingresos como activo al cargar la página
+    cambiarColorTab('tab-ingresos');
     actualizarTituloMes();
 });

@@ -16,7 +16,7 @@ body {
 
 /* Encabezado */
 #encabezado {
-    background-color: #edf0f5; /* Fondo gris oscuro para el encabezado */
+    background-image: url(); /* Fondo de imagen para el encabezado */
     padding: 20px;
     border-radius: 0; /* Sin bordes redondeados */
     width: 100%; /* Ancho completo */
@@ -92,7 +92,6 @@ h1, h2, h3 {
 .porcentaje{
     padding: 10px;
     border-radius: 8px;
-    background-color: #edf0f5; /* Gris claro */
     width: 100%; /* Ancho completo */
     text-align: center; /* Alinear texto al centro */
     margin-bottom: 10px;
@@ -124,10 +123,10 @@ h1, h2, h3 {
 
 .columna-transacciones, .columna-detalles {
     width: 45%; /* Ancho de cada columna */
-    background-color: #f7f7f7; /* Fondo gris muy claro */
+    background-color: #f7f7f7; /* Fondo gris muy claro *
     padding: 20px;
-    border-radius: 0; /* Sin bordes redondeados */
-    box-shadow: none; /* Sin sombra */
+    border-radius: 10px; /* Sin bordes redondeados */
+
 }
 
 /* Campos de entrada */
@@ -152,6 +151,8 @@ button {
 button:hover {
     background-color: #474747; /* Gris más oscuro al pasar el mouse */
 }
+
+
 
 /* Estilos de las pestañas */
 .tabs {
