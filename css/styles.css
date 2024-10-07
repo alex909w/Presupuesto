@@ -180,6 +180,10 @@ li {
     color: white; /* Texto blanco en las transacciones */
 }
 
+span {
+    margin-left: 10px; /* Espacio entre el monto y el porcentaje */
+}
+
 .transaccion-header {
     display: flex; /* Usar flexbox para alinear los elementos en una fila */
     align-items: center; /* Alinear verticalmente al centro */
